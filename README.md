@@ -19,6 +19,8 @@ PageFlip es una app web creada con Next.js 15 que combina el estilo de una bibli
 - [Calidad y recomendaciones](#calidad-y-recomendaciones)
 - [Roadmap sugerido](#roadmap-sugerido)
 - [Recursos](#recursos)
+- [Aplicación en vivo](#aplicación-en-vivo)
+- [Autor](#autor)
 
 ## Resumen
 
@@ -116,7 +118,13 @@ Para probarlo manualmente puedes hacer un `fetch` desde el DevTools o un `curl` 
 
 ### Instalacion rapida
 
-1. Clonar el repositorio y entrar en la carpeta del proyecto.
+1. Clonar el repositorio desde GitLab y entrar en la carpeta del proyecto:
+
+   ```bash
+   git clone https://gitlab.com/RodrigoML/page-flip.git
+   cd page-flip
+   ```
+
 2. Copiar `.env.example` a `.env.local` (o `.env`) y completar las credenciales de Firebase y SendGrid.
 3. Instalar dependencias: `npm install`.
 4. Levantar el entorno local: `npm run dev` y abrir `http://localhost:3000`.
@@ -193,3 +201,14 @@ La normalizacion en `loans.ts` y `wishlist.ts` transforma `Timestamp` en ISO str
 - [SDK web de Firebase](https://firebase.google.com/docs/web/setup)
 - [Open Library API](https://openlibrary.org/developers/api)
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
+
+## Aplicación en vivo
+
+La versión desplegada de la aplicación está disponible aquí:
+
+https://page-flip-flame.vercel.app/
+
+## Autor
+
+- Nombre: Beimar Rodrigo Machaca Aruquipa
+- GitLab: https://gitlab.com/RodrigoML/
