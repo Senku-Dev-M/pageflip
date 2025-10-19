@@ -1,0 +1,185 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--surface-color);
+  box-shadow: 0 14px 24px rgba(10, 15, 26, 0.32);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 20px 32px rgba(10, 15, 26, 0.42);
+  transform: translateY(-2px);
+}
+
+.glowOverlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+}
+
+.card:hover .glowOverlay {
+  opacity: 1;
+}
+
+.coverLink {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 11 / 16;
+  overflow: hidden;
+  background: var(--surface-elevated);
+}
+
+.coverImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .coverImage {
+  transform: scale(1.05);
+}
+
+.coverPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26, 32, 44, 0.9), rgba(42, 52, 70, 0.9));
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--muted-text);
+}
+
+.statusChip {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(8, 12, 22, 0.55);
+  backdrop-filter: saturate(140%) blur(4px);
+  color: #f1f5f9;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+}
+
+.statusAvailable {
+  color: var(--accent-color);
+  border-color: rgba(20, 184, 166, 0.6);
+  box-shadow: 0 6px 18px rgba(20, 184, 166, 0.18);
+}
+
+.statusBorrowed {
+  color: #f9a8d4;
+  border-color: rgba(236, 72, 153, 0.55);
+  box-shadow: 0 6px 18px rgba(236, 72, 153, 0.18);
+}
+
+.statusBorrowedByUser {
+  color: var(--danger-color);
+  border-color: rgba(236, 72, 153, 0.5);
+  box-shadow: 0 6px 18px rgba(236, 72, 153, 0.18);
+}
+
+.statusUnavailable {
+  color: #cbd5f5;
+  border-color: rgba(148, 163, 184, 0.5);
+  box-shadow: 0 6px 18px rgba(100, 116, 139, 0.18);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  transition: color 0.3s ease;
+}
+
+.card:hover .title {
+  color: var(--accent-color);
+}
+
+.author {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+.metaBlock {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted-text);
+}
+
+.returnRow {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.returnButton {
+  flex: 1;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(236, 72, 153, 0.5);
+  background: rgba(236, 72, 153, 0.1);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #f9a8d4;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.returnButton:hover:not(:disabled) {
+  border-color: rgba(236, 72, 153, 0.6);
+  background: rgba(236, 72, 153, 0.2);
+}
+
+.returnButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bottomGlow {
+  pointer-events: none;
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.4), transparent);
+}
